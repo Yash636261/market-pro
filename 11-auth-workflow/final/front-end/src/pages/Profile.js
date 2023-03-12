@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 const Profile = () => {
   const { user } = useGlobalContext();
   const { name, userId, role } = user;
   return (
     <>
-      <div class="w-max w-[100%] flex flex-row">
-        <div class="border-2 border-rose-500 h-[1000px] w-[30vw]">
+      <div class="w-max w-[100%] flex">
+        <div class="justify-center h-[1000px] w-[30vw]">
           <div class="flex flex-col m-[20px] space-y-4">
             <img
-              class="rounded w-36 h-36 flex justify-center items-start m-[30px]"
+              class="rounded w-36 h-36 justify-center items-start m-[30px]"
               src="https://images.pexels.com/photos/15591332/pexels-photo-15591332.jpeg?w=200&h=200&fit=crop&dpr=1"
               alt="Extra large avatar"
             />
 
-            <div class="flex flex-col text-center text-gray-300">
+            <div class="flex flex-col text-center text-base-400">
               <p>{user.name}</p>
               <p>Email</p>
               <p>Extra</p>
@@ -41,22 +42,22 @@ const Profile = () => {
       <button type="submit">Submit</button>
     </form> */}
 
-            <button class="btn btn-xs">Edit</button>
+            <Link to="/userdetailform" class="btn btn-xs">Edit</Link>
           </div>
         </div>
 
-        <div class="border-2 border-rose-500 w-[70vw] flex flex-col">
-          <div class=" h-[100px] m-[20px] border-2 border-emerald-400 text-center">
+        <div class="w-[70vw] flex flex-col">
+          <div class=" h-[100px] m-[20px] text-center">
             <p class="mb-3 font-light text-gray-500 dark:text-gray-400">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
               aperiam, ea voluptatibus ipsam ut repudiandae harum aut laborum
               voluptatem voluptatum.
             </p>
           </div>
-          <h1 class="text-center text-4xl font-extrabold dark:text-white">
+          <h1 class="text-center text-4xl font-extrabold text-base-400">
             Project Section
           </h1>
-          <div class="border-2 border-blue-700">
+          <div class="">
             <div className="main flex flex-wrap justify-around items-center mt-15px my-8">
               <div className="card w-96 bg-base-100 shadow-xl mt-10">
                 <figure>

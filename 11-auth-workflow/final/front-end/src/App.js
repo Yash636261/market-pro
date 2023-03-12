@@ -17,6 +17,7 @@ import {
 } from './pages';
 import Navbar from './components/Navbar';
 import { useGlobalContext } from './context';
+import Userdetailform from './components/Userdetailform';
 function App() {
   // const { isLoading } = useGlobalContext();
   // if (isLoading) {
@@ -45,6 +46,9 @@ function App() {
         <ProtectedRoute path='/profile' exact>
           <Profile/>
         </ProtectedRoute>
+        <ProtectedRoute path='/userdetailform' exact>
+          <Userdetailform/>
+        </ProtectedRoute>
         <Route path='/forgot-password' exact>
           <ForgotPassword />
         </Route>
@@ -54,11 +58,14 @@ function App() {
         <Route path='/user/reset-password' exact>
           <ResetPassword />
         </Route>
+        
         <Route path='*'>
           <Error />
         </Route>
       </Switch>
+      <Footer />
     </Router>
+    
   );
 }
 

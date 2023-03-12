@@ -1,30 +1,59 @@
-import React from 'react';
-import styled from 'styled-components';
-import logo from '../assets/logo.svg';
-import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../context';
+import React from "react";
+import styled from "styled-components";
+import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const Navbar = () => {
   const { user, logoutUser } = useGlobalContext();
   return (
     <Wrapper>
-      <div className='nav-center'>
-        <Link to='/' className='home-link'>
-          <img src={logo} alt='jobs app' className='logo' />
-        </Link>
-        {user && (
-          <div className='nav-links'>
-            <p>hello, {user.name}</p>
-            <button
-              className='btn btn-small'
-              onClick={() => {
-                logoutUser();
-              }}
-            >
-              logout
-            </button>
+      <div className="navbar bg-base-200">
+        <div className="flex-1">
+          <Link className="btn btn-ghost normal-case text-xl" to="/">
+            <p>market-pro</p>
+          </Link>
+        </div>
+        <div className="flex-none gap-2">
+          <div className="flex-1">
+            {user && (
+              <>
+              <div className="nav-links">
+                <button
+                  className="btn btn-small"
+                  onClick={() => {
+                    logoutUser();
+                  }}
+                >
+                  logout
+                </button>
+              </div>
+              </>
+            )}
           </div>
-        )}
+          <div className="dropdown dropdown-end ">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <button>
+                <img src="./R.png" alt="logo" />
+              </button>
+            </label>
+
+            <ul
+              tabIndex={0}
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52 "
+            >
+              <li className="mt-1">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="mt-1">
+                <Link className="justify-between" to="/profile">
+                  Profile
+                  {/* <span className="badge">New</span> */}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Wrapper>
   );
