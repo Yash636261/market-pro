@@ -26,25 +26,7 @@ const Profile=()=>{
                     <p>Extra</p>
                     <p>extra</p>
                 </div>
-                {/* <form method="GET">
-      <div className="flex flex-col">
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="extra1">Extra:</label>
-        <input type="text" id="extra1" name="extra1" value={extra1} onChange={(e) => setExtra1(e.target.value)} />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="extra2">Extra:</label>
-        <input type="text" id="extra2" name="extra2" value={extra2} onChange={(e) => setExtra2(e.target.value)} />
-      </div>
-      <button type="submit">Submit</button>
-    </form> */}
+
 
 
                 <button class="btn btn-xs">Edit</button>

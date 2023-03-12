@@ -2,7 +2,7 @@ import './App.css';
 // import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Footer from './components/Footer';
-import Profile from './components/Profile';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   Home,
@@ -14,6 +14,7 @@ import {
   ProtectedRoute,
   ForgotPassword,
   ResetPassword,
+  Profile
 } from './pages';
 import Navbar from './components/Navbar';
 import { useGlobalContext } from './context';
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <ProtectedRoute path='/dashboard' exact>
           <Dashboard />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile' exact>
+          <Profile/>
         </ProtectedRoute>
         <Route path='/forgot-password' exact>
           <ForgotPassword />

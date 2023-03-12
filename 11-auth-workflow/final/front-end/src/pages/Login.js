@@ -35,7 +35,7 @@ function Login() {
       });
       setLoading(false);
       saveUser(data.user);
-      history.push('/Dashboard');
+      history.push('/profile');
     } catch (error) {
       showAlert({ text: error.response.data.msg });
       setLoading(false);
