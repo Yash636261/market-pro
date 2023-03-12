@@ -1,31 +1,27 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import Card from './components/Card';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import Login from './components/Login';
+import "./App.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-
-const App=()=>{
+function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5001")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err, "it has an error"));
+  });
   return (
-  <>
-  <Router basename="/">
-    <Navbar/>
-    <Routes>
-      <Route index element={<Card/>}></Route>
-      <Route path="Profile" element={<Profile/>}></Route>
-      <Route path="login" element={<Login/>}></Route>
-    </Routes>
-    <Footer/>
-    
+    <div className="App">
+      <h1>Image uploading react</h1>
+      {data.map((singleData) => {
+        console.log(singleData.img.data.data);
 
-  </Router>
-  </>
+        const base64String = btoa(
+          String.fromCharCode(...new Uint8Array(singleData.img.data.data))
+        );
+        return <img src={`data:image/png;base64,${base64String}`} width="300"/>
+      })}
+    </div>
   );
 }
 
