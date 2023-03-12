@@ -1,4 +1,8 @@
-*,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *,
 ::after,
 ::before {
   box-sizing: border-box;
@@ -66,11 +70,11 @@ html {
 }
 
 body {
-  background: var(--backgroundColor);
+  background: var(--red-light);
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
-  color: var(--textColor);
+  color: goldenrod;
 }
 
 p {
@@ -287,4 +291,4 @@ ul {
   height: 100%;
   background: rgba(255, 255, 255, 0.6);
   cursor: not-allowed;
-}
+} 
