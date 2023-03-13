@@ -43,7 +43,7 @@ const Navbar = () => {
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52 "
             >
               <li className="mt-1">
-                <Link to="/">Home</Link>
+                <Link to="/card">Home</Link>
               </li>
               <li className="mt-1">
                 <Link className="justify-between" to="/profile">

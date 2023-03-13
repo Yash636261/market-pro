@@ -1,29 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+//import { useLocation, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useGlobalContext } from '../context';
-import axios from 'axios';
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+// import axios from 'axios';
+// function useQuery() {
+//   return new URLSearchParams(useLocation().search);
+// }
 
 const VerifyPage = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const { isLoading } = useGlobalContext();
-  const query = useQuery();
+ // const query = useQuery();
 
   const verifyToken = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/v1/auth/verify-email', {
-        verificationToken: query.get('token'),
-        email: query.get('email'),
-      });
     } catch (error) {
       // console.log(error.response);
       setError(true);
     }
+    // past
+    // try {
+    //   const { data } = await axios.post('/api/v1/auth/verify-email', {
+    //     verificationToken: query.get('token'),
+    //     email: query.get('email'),
+    //   });
+    // } catch (error) {
+    //   // console.log(error.response);
+    //   setError(true);
+    // }
     setLoading(false);
   };
 

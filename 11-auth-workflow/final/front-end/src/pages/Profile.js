@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
 const Profile = () => {

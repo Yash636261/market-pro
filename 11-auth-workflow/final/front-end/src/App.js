@@ -41,6 +41,9 @@ function App() {
         <Route path='/register' exact>
           <Register />
         </Route>
+        <ProtectedRoute path='/card' exact>
+          <Card />
+        </ProtectedRoute>
         <ProtectedRoute path='/dashboard' exact>
           <Dashboard />
         </ProtectedRoute>

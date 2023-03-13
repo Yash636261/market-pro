@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory, Link } from 'react-router-dom';
+import React, { useState} from 'react';
+import { useHistory} from 'react-router-dom';
+//import { useLocation, useHistory} from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
 import FormRow from '../components/FormRow';
 import useLocalState from '../utils/localState';
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+// function useQuery() {
+//   return new URLSearchParams(useLocation().search);
+// }
 
 const ResetPasswordForm = () => {
   const history = useHistory();
@@ -15,7 +16,7 @@ const ResetPasswordForm = () => {
   const { alert, showAlert, loading, setLoading, success, setSuccess } =
     useLocalState();
 
-  const query = useQuery();
+  //const query = useQuery();
 
   const handleChange = async (e) => {
     setPassword(e.target.value);
@@ -29,11 +30,6 @@ const ResetPasswordForm = () => {
       return;
     }
     try {
-      const { data } = await axios.post('/api/v1/auth/reset-password', {
-        password,
-        token: query.get('token'),
-        email: query.get('email'),
-      });
       setLoading(false);
       setSuccess(true);
       showAlert({
@@ -47,6 +43,26 @@ const ResetPasswordForm = () => {
       showAlert({ text: error.response.data.msg });
       setLoading(false);
     }
+    // past 
+    // try {
+    //   const { data } = await axios.post('/api/v1/auth/reset-password', {
+    //     password,
+    //     token: query.get('token'),
+    //     email: query.get('email'),
+    //   });
+    //   setLoading(false);
+    //   setSuccess(true);
+    //   showAlert({
+    //     text: `Success, redirecting to login page shortly`,
+    //     type: 'success',
+    //   });
+    //   setTimeout(() => {
+    //     history.push('/login');
+    //   }, 3000);
+    // } catch (error) {
+    //   showAlert({ text: error.response.data.msg });
+    //   setLoading(false);
+    // }
   };
   return (
     <Wrapper className='page'>
