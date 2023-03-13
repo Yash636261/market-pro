@@ -61,9 +61,41 @@ const Profile = () => {
           </h1>
           <div class="">
             <div className="main flex flex-wrap justify-around items-center mt-15px my-8">
-              <div className=" ml-1 card w-96 bg-base-100 shadow-xl mt-10">
+            <div className="card w-96 bg-cream-200 shadow-xl mt-10">
+          <figure>
+            <img src="/images/Code.gif" alt="logo" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+             CodeCompanion
+            </h2>
+            <p>CodeCompanion is a comprehensive and user-friendly web-based tool designed to support and enhance the development process for software engineers.</p>
+            <div className="card-actions justify-end">
+              <div className="badge badge-outline">Github</div>
+              <div className="badge badge-outline">BlogingSite</div>
+            </div>
+            <Link className="btn btn-ghost normal-case text-0 mt-5" to="/description"> View more</Link>
+          </div>
+        </div>
+        <div className="card w-96 bg-cream-200 shadow-xl mt-10">
+          <figure>
+            <img src="/images/Take.png" alt="logo" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+             TakeABlog
+            </h2>
+            <p>TakeABlog is a blogging website for tech people that provides a platform for individuals to share their knowledge, experience, and insights about technology.</p>
+            <div className="card-actions justify-end">
+              <div className="badge badge-outline">Github</div>
+              <div className="badge badge-outline">BlogingSite</div>
+            </div>
+            <Link className="btn btn-ghost normal-case text-0 mt-5" to="/description"> View more</Link>
+          </div>
+        </div>
+              {/* <div className=" ml-2 card w-96 bg-base-100 shadow-xl mt-10">
                 <figure>
-                  <img src="/images/default.jpg" alt="logo" />
+                  <img src="/images/default.jpg" alt="Shoes" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">
@@ -92,39 +124,7 @@ const Profile = () => {
                     <div className="badge badge-outline">Products</div>
                   </div>
                 </div>
-              </div>
-              <div className=" ml-2 card w-96 bg-base-100 shadow-xl mt-10">
-                <figure>
-                  <img src="/images/default.jpg" alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">
-                    Api-name
-                    <div className="badge badge-secondary">NEW</div>
-                  </h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
-                  </div>
-                </div>
-              </div>
-              <div className=" ml-2 card w-96 bg-base-100 shadow-xl mt-10">
-                <figure>
-                  <img src="/images/default.jpg" alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">
-                    Api-name
-                    <div className="badge badge-secondary">NEW</div>
-                  </h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
-                  </div>
-                </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
