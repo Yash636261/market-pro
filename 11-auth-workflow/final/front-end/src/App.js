@@ -17,6 +17,7 @@ import {
   FormComponent
 } from './pages';
 import Navbar from './components/Navbar';
+import Description from './components/Description';
 import { useGlobalContext } from './context';
 import Userdetailform from './components/Userdetailform';
 function App() {
@@ -55,6 +56,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/FormComponent' exact>
           <FormComponent/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/description' exact>
+          <Description />
         </ProtectedRoute>
         <Route path='/forgot-password' exact>
           <ForgotPassword />

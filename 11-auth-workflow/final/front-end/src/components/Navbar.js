@@ -7,7 +7,7 @@ import { useGlobalContext } from "../context";
 const Navbar = () => {
   const { user, logoutUser } = useGlobalContext();
   return (
-    <Wrapper>
+    <>
       <div className="navbar bg-base-200">
         <div className="flex-1">
           <Link className="btn btn-ghost normal-case text-xl" to="/">
@@ -55,7 +55,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </Wrapper>
+    </>
   );
 };
 
