@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import { Button, Form, Input, InputNumber } from 'antd';
+import { useGlobalContext } from '../context';
+
 const layout = {
   labelCol: {
     span: 8,
@@ -27,6 +29,7 @@ const onFinish = (values) => {
   console.log(values);
 };
 const Userdetailform = () => (
+  
   <Form
     {...layout}
     name="nest-messages"
@@ -39,6 +42,7 @@ const Userdetailform = () => (
     <Form.Item
       name={['user', 'name']}
       label="Name"
+      value="jayesh"
       rules={[
         {
           required: true,

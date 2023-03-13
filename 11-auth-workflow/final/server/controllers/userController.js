@@ -15,6 +15,7 @@ const getAllUsers = async (req, res) => {
 
 const getSingleUser = async (req, res) => {
   const user = await User.findOne({ _id: req.params.id }).select('-password');
+  console.log(user);
   if (!user) {
     throw new CustomError.NotFoundError(`No user with id : ${req.params.id}`);
   }
@@ -23,11 +24,13 @@ const getSingleUser = async (req, res) => {
 };
 
 const showCurrentUser = async (req, res) => {
+  console.log(req.user);
   res.status(StatusCodes.OK).json({ user: req.user });
 };
 // update user with user.save()
 const updateUser = async (req, res) => {
-  const { email, name } = req.body;
+  console.log(req.body);
+  const { email, name,age,organization,degree,category } = req.body;
   if (!email || !name) {
     throw new CustomError.BadRequestError('Please provide all values');
   }
@@ -35,6 +38,10 @@ const updateUser = async (req, res) => {
 
   user.email = email;
   user.name = name;
+  user.age = age;
+  user.organization= organization;
+  user.Education= degree;
+  user.category=category;
 
   await user.save();
 

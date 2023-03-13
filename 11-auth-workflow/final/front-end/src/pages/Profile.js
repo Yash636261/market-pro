@@ -1,10 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
 const Profile = () => {
   const { user } = useGlobalContext();
-  const { name, userId, role } = user;
+  const { name, userId, role ,category} = user;
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`/api/v1/users/${userId}`);
+      const data = await response.json();
+      console.log(data);
+      setUserData(data.user);
+    };
+    fetchData();
+  }, [userId]);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div class="w-max w-[100%] flex">
@@ -17,10 +32,10 @@ const Profile = () => {
             />
 
             <div class="flex flex-col text-center text-base-400">
-              <p>{user.name}</p>
-              <p>Email</p>
-              <p>Extra</p>
-              <p>extra</p>
+              <p>{userData.name}</p>
+              <p>{userData.age}</p>
+              <p>{userData.category}</p>
+              <p>{userData.organization}</p>
             </div>
             {/* <form method="GET">
       <div className="flex flex-col">
@@ -42,7 +57,7 @@ const Profile = () => {
       <button type="submit">Submit</button>
     </form> */}
 
-            <Link to="/userdetailform" class="btn btn-xs">Edit</Link>
+          <p>  <Link to="/FormComponent" class="btn btn-xs">Edit</Link></p>
           </div>
         </div>
 

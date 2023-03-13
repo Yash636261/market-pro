@@ -7,7 +7,7 @@ function Home() {
   const { user } = useGlobalContext();
   return (
     <>
-      {user && <Redirect to='/dashboard' />}
+      {user && <Redirect to='/profile' />}
       <Wrapper className='page'>
         <div className='info'>
           <h2>

@@ -12,7 +12,7 @@ const {
 const crypto = require('crypto');
 
 const register = async (req, res) => {
-  const { email, name, password } = req.body;
+  const { email, name, password} = req.body;
 
   const emailAlreadyExists = await User.findOne({ email });
   if (emailAlreadyExists) {
@@ -31,6 +31,8 @@ const register = async (req, res) => {
     password,
     role,
     verificationToken,
+    
+    
   });
   const origin = 'http://localhost:3000';
   // const newOrigin = 'https://react-node-user-workflow-front-end.netlify.app';

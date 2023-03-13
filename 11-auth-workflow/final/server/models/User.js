@@ -39,7 +39,33 @@ const UserSchema = new mongoose.Schema({
   },
   passwordTokenExpirationDate: {
     type: Date,
+  }, 
+  organization: {
+    type: String,
+    default: 'backend',
+    
+    minlength: 3,
+    maxlength: 50
   },
+  age: {
+    type: Number,
+    min: 18,
+    max: 120,
+    default:18
+  },
+  Education: {
+    type: String,
+    
+    enum: ['High School', 'Associate', 'Bachelor', 'Master', 'Doctorate'],
+    default:'Bachelor'
+  },
+  category: {
+    type: String,
+    
+    enum: ['A', 'B', 'C', 'D'],
+    default:'A'
+  }
+
 });
 
 UserSchema.pre('save', async function () {

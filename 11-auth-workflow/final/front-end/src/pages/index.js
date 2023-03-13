@@ -7,6 +7,7 @@ import Dashboard from './Dashboard';
 import ProtectedRoute from './ProtectedRoute';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
+import FormComponent from './FormComponent';
 export {
   Home,
   Error,
@@ -17,4 +18,5 @@ export {
   ProtectedRoute,
   ForgotPassword,
   ResetPassword,
+  FormComponent
 };
