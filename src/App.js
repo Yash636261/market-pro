@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5001")
+      .get("http://localhost:5000")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err, "it has an error"));
   });
@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <h1>Image uploading react</h1>
       {data.map((singleData) => {
-        console.log(singleData.img.data.data);
-
         const base64String = btoa(
-          String.fromCharCode(...new Uint8Array(singleData.img.data.data))
+         new Uint8Array(singleData.img.data.data).reduce(function(data,byte){
+          return data+String.fromCharCode(byte);
+         },"")
         );
-        return <img src={`data:image/png;base64,${base64String}`} width="300"/>
+        return (<img src={`data:image/png;base64,${base64String}`} width="300"/>)
       })}
     </div>
   );

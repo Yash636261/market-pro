@@ -4,22 +4,30 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const cors = require("cors");
-const port = 5001;
+const port = 5000;
 const fs = require("fs");
 const imageModel = require("./models");
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const MONGO_URL = "mongodb+srv://VinayakVispute:Admin%402023@nodejsexpressjsprojects.pbdp0vj.mongodb.net/testingBuddy?retryWrites=true&w=majority"
+
 mongoose
   .connect(
-   MONGO_URL,
+    "mongodb+srv://Jazzy49:MyNodeApp@nodeprojects.tsxlcqi.mongodb.net/dummyjjk?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("connected successfully"))
   .catch((err) => console.log("it has an error", err));
 
+  const adjectives = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink', 'black', 'white', 'gray'];
+  const nouns = ['apple', 'banana', 'car', 'dog', 'elephant', 'flower', 'guitar', 'house', 'ice cream', 'jacket'];
+  
+  function generateRandomName() {
+    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    return `${adjective}-${noun}`;
+  }
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -34,7 +42,7 @@ const upload = multer({ storage: storage });
 
 app.post("/", upload.single("testImage"), (req, res) => {
   const saveImage =  imageModel({
-    name: req.body.name,
+    name: generateRandomName(),
     img: {
       data: fs.readFileSync("uploads/" + req.file.filename),
       contentType: "image/png",
@@ -50,9 +58,7 @@ app.post("/", upload.single("testImage"), (req, res) => {
     });
     res.send('image is saved')
 });
-app.get('/dash',(req,res)=>{
-  return res.send("THis is working Fine");
-})
+
 
 app.get('/',async (req,res)=>{
   const allData = await imageModel.find()
