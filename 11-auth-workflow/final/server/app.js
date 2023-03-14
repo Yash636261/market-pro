@@ -55,8 +55,10 @@ app.use('/api/v1/orders', orderRouter);
 //  app.use('/api/v1/projects',ProjectRouter);
 app.post('/api/v1/projects', async (req, res) => {
   try {
-    const { projectname, description, howTOSetup, DOCXUrl, price, isVerfied, createdBy } = req.body;
-    const project = new Project({ projectname, description, DOCXUrl, price, howTOSetup, isVerfied, createdBy });
+    const { projectname, description, howTOSetup, DOCXUrl, price, isVerfied, createdBy ,cover,Techused,
+    Features} = req.body;
+    const project = new Project({ projectname, description, DOCXUrl, price, howTOSetup, isVerfied, createdBy,cover,Techused,
+      Features });
     await project.save();
     res.status(201).send({ message: 'Project created successfully' });
   } catch (err) {

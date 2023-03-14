@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Print = () => {
+const CreateProject = () => {
   const [projectData, setProjectData] = useState({
     projectname: '',
     description: '',
@@ -10,6 +10,9 @@ const Print = () => {
     price: '',
     isVerfied: false,
     createdBy: '',
+    TechUsed: '',
+    Features: '',
+    cover:''
   });
 
   const handleChange = (e) => {
@@ -23,7 +26,7 @@ const Print = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/', projectData);
+      await axios.post('/api/v1/projects', projectData);
       console.log('Project created successfully');
     } catch (err) {
       console.log("This is Error", err);
@@ -71,11 +74,40 @@ const Print = () => {
           <label htmlFor="price">Price:</label>
           <input type="number" id="price" name="price" value={projectData.price} onChange={handleChange} required />
         </div>
-
+        <div>
+          <label htmlFor="TechUsed">TechUsed</label>
+          <textarea
+            id="TechUsed"
+            name="TechUsed"
+            value={projectData.TechUsed}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="Features">Features</label>
+          <textarea
+            id="Features"
+            name="Features"
+            value={projectData.Features}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="cover">cover</label>
+          <textarea
+            id="cover"
+            name="cover"
+            value={projectData.cover}
+            onChange={handleChange}
+            required
+          />
+</div>
         <button type="submit">Create Project</button>
       </form>
     </div>
   );
 };
 
-export default Print;
+export default CreateProject;

@@ -14,13 +14,15 @@ import {
   ProtectedRoute,
   ForgotPassword,
   ResetPassword,
-  FormComponent
+  FormComponent,
+  CreateProject
 } from './pages';
 import Navbar from './components/Navbar';
 import Description from './components/Description';
 import Description2 from './components/Description2';
 import { useGlobalContext } from './context';
 import Userdetailform from './components/Userdetailform';
+
 function App() {
   // const { isLoading } = useGlobalContext();
   // if (isLoading) {
@@ -61,9 +63,13 @@ function App() {
         <ProtectedRoute path='/description' exact>
           <Description />
         </ProtectedRoute>
+        <ProtectedRoute path='/CreateProject' exact>
+          <CreateProject />
+        </ProtectedRoute>
         <ProtectedRoute path='/description2' exact>
           <Description2 />
         </ProtectedRoute>
+        
         <Route path='/forgot-password' exact>
           <ForgotPassword />
         </Route>
