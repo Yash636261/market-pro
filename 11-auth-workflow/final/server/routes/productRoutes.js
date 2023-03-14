@@ -19,12 +19,13 @@ const { getSingleProductReviews } = require('../controllers/reviewController');
 router
   .route('/')
   // .post([authenticateUser, authorizePermissions('admin')], createProduct)
-   .post(authenticateUser, createProduct)
+   .post( createProduct)
   .get(getAllProducts);
 
 router
   .route('/uploadImage')
-  .post([authenticateUser, authorizePermissions('admin')], uploadImage);
+  // .post([authenticateUser, authorizePermissions('admin')], uploadImage);
+  .post( uploadImage);
 
 router
   .route('/:id')
