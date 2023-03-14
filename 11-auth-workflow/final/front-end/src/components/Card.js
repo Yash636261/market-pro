@@ -80,7 +80,7 @@ const card = () => {
               <div className="badge badge-outline">Github</div>
               <div className="badge badge-outline">BlogingSite</div>
             </div>
-            <Link className="btn btn-ghost normal-case text-0 mt-5" to="/description"> View more</Link>
+            <Link className="btn btn-ghost normal-case text-0 mt-5" to="/description2"> View more</Link>
           </div>
         </div>
         {/* <div className="card w-96 bg-cream-200 shadow-xl mt-10">
