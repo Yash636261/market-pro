@@ -23,7 +23,8 @@ const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const orderRouter = require('./routes/orderRoutes');
-
+const ProjectRouter = require('./routes/Projectroutes');
+const Project=require('./models/Project')
 // middleware
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -51,6 +52,19 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/orders', orderRouter);
+//  app.use('/api/v1/projects',ProjectRouter);
+app.post('/api/v1/projects', async (req, res) => {
+  try {
+    const { projectname, description, howTOSetup, DOCXUrl, price, isVerfied, createdBy } = req.body;
+    const project = new Project({ projectname, description, DOCXUrl, price, howTOSetup, isVerfied, createdBy });
+    await project.save();
+    res.status(201).send({ message: 'Project created successfully' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: 'Internal server error' });
+  }
+});
+
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
