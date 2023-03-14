@@ -20,6 +20,8 @@ import {
 import Navbar from './components/Navbar';
 import Description from './components/Description';
 import Description2 from './components/Description2';
+import Getaway from './components/Getaway';
+
 import { useGlobalContext } from './context';
 import Userdetailform from './components/Userdetailform';
 
@@ -66,6 +68,9 @@ function App() {
         <ProtectedRoute path='/CreateProject' exact>
           <CreateProject />
         </ProtectedRoute>
+        <ProtectedRoute path='/Getaway' exact>
+      <Getaway />
+        </ProtectedRoute>
         <ProtectedRoute path='/description2' exact>
           <Description2 />
         </ProtectedRoute>
@@ -84,7 +89,6 @@ function App() {
           <Error />
         </Route>
       </Switch>
-      
       <Footer />
     </Router>
     

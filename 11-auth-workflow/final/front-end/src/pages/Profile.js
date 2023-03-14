@@ -59,6 +59,7 @@ const Profile = () => {
           <h1 class="text-center text-2xl font-extrabold text-base-400">
             Project Section
           </h1>
+          <Link className="ml-10 w-[100px] h-[40px] text-xl btn btn-xs" to="/CreateProject"> Create</Link>
           <div class="">
             <div className="main flex flex-wrap justify-around items-center mt-15px my-8">
             <div className="card w-96 bg-cream-200 shadow-xl mt-10">
@@ -93,7 +94,7 @@ const Profile = () => {
             <Link className="btn btn-ghost normal-case text-0 mt-5" to="/description"> View more</Link>
           </div>
         </div>
-              {/* <div className=" ml-2 card w-96 bg-base-100 shadow-xl mt-10">
+             <div className=" ml-2 card w-96 bg-base-100 shadow-xl mt-10">
                 <figure>
                   <img src="/images/default.jpg" alt="Shoes" />
                 </figure>
@@ -124,7 +125,7 @@ const Profile = () => {
                     <div className="badge badge-outline">Products</div>
                   </div>
                 </div>
-              </div> */}
+              </div> 
             </div>
           </div>
         </div>

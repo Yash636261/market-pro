@@ -15,7 +15,7 @@ export {
   Register,
   Login,
   Verify,
-  Dashboard,
+  Dashboard, 
   ProtectedRoute,
   ForgotPassword,
   ResetPassword,

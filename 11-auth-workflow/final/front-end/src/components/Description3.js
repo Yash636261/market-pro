@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const description = () => {
+
+const description3 = () => {
   return (
     <>
       <section className="text-gray-700 body-font overflow-hidden bg-white">
@@ -64,30 +65,31 @@ const description = () => {
                 about this projects
               </h1>
               <ul className="text-grey-200 text-1xl">
-                <li className="text-1xl font-bold text-base-900">product name: Code Companion</li>
-                <li className="text-1xl font-bold text-base-900">date created: 12,dec 2022</li>
-                <li className="text-1xl font-bold text-base-900">size: 4GB</li>
-                <li className="text-1xl font-bold text-base-900">devloper/organization name: Tech Nodes</li>
+                <li className="text-1xl font-bold text-base-900">product name: Take A Blog</li>
+                <li className="text-1xl font-bold text-base-900">date created: 23,feb 2022</li>
+                <li className="text-1xl font-bold text-base-900">size: 1GB</li>
+                <li className="text-1xl font-bold text-base-900">devloper name: Tech Nodes</li>
               </ul>
               <p className="leading-relaxed mt-10">
-              CodeCompanion is a comprehensive and user-friendly web-based tool designed to support and enhance the development process for software engineers.
+              TakeABlog is a blogging website for tech people that provides a platform for individuals to share their knowledge, experience, and insights about technology.
               </p>
               <div className="flex">
                 <button className="flex mr-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                   Preview
                 </button>
-                
+                <Link className="flex  text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" to="/Getaway">
+                  Get It Now
+                </Link>
               </div>
                 <h2 className="text-gray-900 text-3xl title-font font-medium mb-1 mt-10">
                   description
                 </h2>
                 <p className="leading-relaxed">
                     <ul class="list-disc marker:text-blue-500">
-                        <li className="mt-3">Code Companion is a website that provides a variety of tools and features for software developers</li>
-                        <li className="mt-3">It aims to make coding more accessible, efficient, and enjoyable. With features such as a code comment adder, space and time complexity and space complexity analyzer, code explainer, and error finder, Code Companion offers a comprehensive solution for software development needs.</li>
-                        <li className="mt-3"> Whether you're a beginner or an experienced developer, Code Companion can help you write better code, understand your code's performance, and resolve errors.</li>
-                        <li className="mt-3">With its user-friendly interface and easy-to-use tools, Code Companion is the perfect companion for all your coding needs.</li>
-                        
+                        <li className="mt-3">Allows a glitch-free playback time of up to 5 hours in single charge and up to 38 hours with charging case. The 700mAh charging case takes 2 hours to charge, which enables quick charging of the earbuds.</li>
+                        <li className="mt-3">Bluetooth 5.0 with a 10m range allows instant pairing with any Android or iOS device.</li>
+                        <li className="mt-3">IPX-5 water and sweat resistant: Use comfortably outdoors or at the gym</li>
+                        <li className="mt-3">Noise cancellation enables an immersive listening experience.</li>
                     </ul>
                     </p>
                 
@@ -95,14 +97,15 @@ const description = () => {
                   How to setup project
                 </h2>
 
-                <p>To install the CodeCompanion application, follow these steps:</p>
-
-                <ol>
-                    <li className="mt-3">Clone the repository: <code>git clone "https://github.com/TechNodes2-0/CodeCompanion.git"</code></li>
-                    <li className="mt-3">Navigate to the <code>client</code> folder using the command <code>cd C:\Users\Admin\Desktop\Git\CodeCompanion\client</code></li>
-                    <li className="mt-3">Host the application on localhost by running <code>npm run dev</code></li>
-                    <li className="mt-3">Access the application at <code>http://localhost:5173/</code></li>
-                </ol>
+                <p>
+                1 Install python by official way:<br/>
+                2 Then in CMD enter pip install django<br/>
+pip install django<br/>
+3. Open project directly in cmd and locate manage.py file directory
+py -m venv myworld<br/>
+4. Then activate the environment<br/>
+Myworld\Scripts\activate<br/>
+                </p>
 
                 <h2 className="text-gray-900 text-3xl title-font font-medium mb-1 mt-10">
                   Tech Used
@@ -110,10 +113,9 @@ const description = () => {
 
                 <ul class="list-disc marker:text-blue-500">
                     <li>HTML</li>
-                    <li>TAILWIND</li>
+                    <li>CSS</li>
                     <li>JAVASCRIPT</li>
-                    <li>OPEN AI</li>
-                    <li>NODE JS</li>
+                    <li>DJANGO</li>
                 </ul>
 
 
@@ -122,9 +124,9 @@ const description = () => {
                 </h2>
 
                 <ul class="list-disc marker:text-blue-500">
-                    <li>Comment adder</li>
-                    <li>T.C. Cheker</li>
-                    <li>Code Cheker</li>
+                    <li>Take a blog provides a handy feature of ability to edit the existing text and images easily.</li>
+                    <li>TakeABlog provides a chat support which does the perfect job by filling the communication gap between the author and the user which equally results into a better user experience.</li>
+                    <li>TakeABlog provides a wide category and filter options to choose one's according to the requirements and interest of the user which reflects a better user experience.</li>
                 </ul>
             </div>
           </div>
@@ -135,4 +137,4 @@ const description = () => {
   );
 };
 
-export default description;
+export default description3;

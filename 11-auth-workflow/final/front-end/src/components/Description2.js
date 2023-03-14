@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const description2 = () => {
   return (
@@ -76,9 +77,9 @@ const description2 = () => {
                 <button className="flex mr-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                   Preview
                 </button>
-                <button className="flex  text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                <Link className="flex  text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" to="/Getaway">
                   Get It Now
-                </button>
+                </Link>
               </div>
                 <h2 className="text-gray-900 text-3xl title-font font-medium mb-1 mt-10">
                   description
