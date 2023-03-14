@@ -59,7 +59,7 @@ const Profile = () => {
           <h1 class="text-center text-2xl font-extrabold text-base-400">
             Project Section
           </h1>
-          <Link className="ml-10 w-[100px] h-[40px] text-xl btn btn-xs" to="/CreateProject"> Create</Link>
+          <Link className="ml-10 w-[250px] h-[40px] text-xl btn btn-xs" to="/CreateProject">Upload new project</Link>
           <div class="">
             <div className="main flex flex-wrap justify-around items-center mt-15px my-8">
             <div className="card w-96 bg-cream-200 shadow-xl mt-10">

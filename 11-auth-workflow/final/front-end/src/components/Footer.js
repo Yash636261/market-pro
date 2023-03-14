@@ -24,7 +24,6 @@ const footer =()=>{
     <a className="link link-hover" href="/">Cookie policy</a>
   </div> 
   <div>
-    <button className="btn btn-ghost normal-case text-xl" to="/profile"> goto top</button>
   </div>
   {/* <div>
     <span className="footer-title">Newsletter</span> 

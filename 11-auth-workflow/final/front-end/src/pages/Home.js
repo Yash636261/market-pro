@@ -1,38 +1,50 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import main from '../assets/main.svg';
-import { Redirect } from 'react-router-dom';
-import { useGlobalContext } from '../context';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import main from "../assets/main.svg";
+import { Redirect } from "react-router-dom";
+import { useGlobalContext } from "../context";
 function Home() {
   const { user } = useGlobalContext();
   return (
     <>
-      {user && <Redirect to='/profile' />}
-      <Wrapper className='page'>
-        <div className='info'>
+      {user && <Redirect to="/profile" />}
+      <Wrapper className="page">
+        <div className="info">
           <h2>
-            <span>Auth</span>
-            Workflow
+            <span>Market-</span>
+            Pro
           </h2>
           <p>
-            I'm baby viral enamel pin chartreuse cliche retro af selfies kinfolk
-            photo booth plaid jianbing actually squid 3 wolf moon lumbersexual.
-            Hell of humblebrag gluten-free lo-fi man braid leggings.
+            Market-Pro is the premier online destination for individuals and
+            businesses looking to buy or sell projects. With a wide range of
+            categories, from graphic design and software development to
+            marketing and writing
           </p>
           <p>
-            Cloud bread kale chips wayfarers deep v chicharrones leggings
-            fingerstache actually blog cliche four dollar toast. Sriracha ugh
-            kickstarter, next level la croix butcher lomo.
+            Market-Pro connects talented freelancers and skilled professionals
+            with clients in need of their services. Whether you're a seasoned
+            entrepreneur or a newcomer to the industry, Market-Pro makes it easy
+            to find the perfect project or sell your own work to interested
+            buyers.
           </p>
 
-          <Link to='/login' className='btn'>
+          {/* <Link to='/login' className='btn'>
             Login
           </Link>
           <Link to='/register' className='btn'>
             Register
-          </Link>
+          </Link> */}
+
+          <div style={{ display: "flex" }}>
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+            <Link to="/register" className="btn">
+              Register
+            </Link>
+          </div>
         </div>
-        <img src={main} alt='job hunt' className='img main-img' />
+        <img src={main} alt="job hunt" className="img main-img" />
       </Wrapper>
     </>
   );

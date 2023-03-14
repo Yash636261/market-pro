@@ -34,12 +34,18 @@ const CreateProject = () => {
   };
 
   return (
-    <div>
-      <h1>New Project</h1>
+    <div className="max-w-md mx-auto">
+      <h1 className="text-3xl font-bold mb-6">New Project</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="projectname">Project Name:</label>
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="projectname"
+          >
+            Project Name:
+          </label>
           <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             id="projectname"
             name="projectname"
@@ -48,20 +54,32 @@ const CreateProject = () => {
             required
           />
         </div>
-        <div>
-          <div>
-            <label htmlFor="isVerfied">Is Verified:</label>
+        <div className="mb-4">
+          <div className="flex items-center">
             <input
+              className="form-checkbox h-5 w-5 text-gray-600"
               id="isVerfied"
               name="isVerfied"
               type="checkbox"
               checked={projectData.isVerfied}
               onChange={handleChange}
             />
+            <label
+              className="ml-2 block text-gray-700 font-bold mb-2"
+              htmlFor="isVerfied"
+            >
+              Is Verified
+            </label>
           </div>
 
-          <label htmlFor="description">Description:</label>
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="description"
+          >
+            Description:
+          </label>
           <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="description"
             name="description"
             value={projectData.description}
@@ -69,9 +87,15 @@ const CreateProject = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="DOCXUrl">DOCX URL:</label>
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="DOCXUrl"
+          >
+            DOCX URL:
+          </label>
           <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             id="DOCXUrl"
             name="DOCXUrl"
@@ -80,8 +104,12 @@ const CreateProject = () => {
           />
         </div>
         <div>
-          <label htmlFor="howTOSetup">How to Set Up:</label>
+          <label 
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="howTOSetup">How to Set Up:</label>
           <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            
             id="howTOSetup"
             name="howTOSetup"
             value={projectData.howTOSetup}
@@ -90,8 +118,11 @@ const CreateProject = () => {
           />
         </div>
         <div>
-          <label htmlFor="price">Price:</label>
+          <label
+            className="block text-gray-700 font-bold mb-2"
+             htmlFor="price">Price:</label>
           <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="number"
             id="price"
             name="price"
@@ -101,8 +132,11 @@ const CreateProject = () => {
           />
         </div>
         <div>
-          <label htmlFor="TechUsed">TechUsed</label>
+          <label 
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="TechUsed">TechUsed</label>
           <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="TechUsed"
             name="TechUsed"
             value={projectData.TechUsed}
@@ -111,8 +145,11 @@ const CreateProject = () => {
           />
         </div>
         <div>
-          <label htmlFor="Features">Features</label>
+          <label 
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="Features">Features</label>
           <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="Features"
             name="Features"
             value={projectData.Features}
@@ -121,8 +158,11 @@ const CreateProject = () => {
           />
         </div>
         <div>
-          <label htmlFor="cover">cover</label>
+          <label 
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="cover">cover</label>
           <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="cover"
             name="cover"
             value={projectData.cover}
@@ -130,7 +170,7 @@ const CreateProject = () => {
             required
           />
         </div>
-        <button type="submit">Create Project</button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Create Project</button>
       </form>
     </div>
   );

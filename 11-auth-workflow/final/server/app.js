@@ -67,7 +67,11 @@ app.post('/api/v1/projects', async (req, res) => {
   }
 });
 
+app.get('/projects',async (req,res)=>{
+  const products = await Project.find();
 
+  res.status(200).json({ products, count: products.length });
+})
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
